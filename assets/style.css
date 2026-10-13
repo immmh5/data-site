@@ -1,0 +1,405 @@
+/* ============================================================
+   علوم البيانات — نظام التصميم المشترك
+   Minimal-color design system: paper, ink, one accent.
+   ============================================================ */
+
+:root{
+  --paper:#fbfaf7;
+  --ink:#23262b;
+  --muted:#6b7076;
+  --line:#e4e1d7;
+  --line-soft:#efede6;
+  --accent:#1f5f6b;
+  --accent-deep:#174b55;
+  --soft:#eef3f3;
+  --ok:#1e7a3c;
+  --ok-soft:#e9f4ec;
+  --bad:#b0392e;
+  --bad-soft:#f9eceb;
+  --warn:#8a6d1a;
+  --warn-soft:#f9f4e2;
+  --radius:14px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+  font-size:17px;
+  line-height:1.95;
+}
+p{margin:.5em 0 1em}
+strong{font-weight:700}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* English inline terms */
+.en{
+  font-family:'IBM Plex Sans','Segoe UI',sans-serif;
+  direction:ltr;
+  unicode-bidi:isolate;
+  font-weight:600;
+  font-size:.88em;
+  background:#f0f2f3;
+  border:1px solid var(--line);
+  border-radius:7px;
+  padding:0 .45em;
+  white-space:nowrap;
+}
+.en.big{font-size:1em}
+
+/* ---------- top navigation ---------- */
+.topnav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,250,247,.94);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-block:10px}
+.brand{font-weight:700;font-size:1.05rem;color:var(--ink);white-space:nowrap}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.brand .en{margin-inline-start:.35em}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{
+  color:var(--muted);
+  padding:.35em .85em;
+  border-radius:999px;
+  font-size:.92rem;
+  font-weight:600;
+}
+.nav-links a:hover{color:var(--ink);background:var(--soft);text-decoration:none}
+.nav-links a.active{color:#fff;background:var(--accent)}
+
+/* ---------- layout ---------- */
+.wrap{max-width:980px;margin-inline:auto;padding-inline:22px}
+main{padding-bottom:40px}
+
+/* ---------- lesson header ---------- */
+.lesson-head{padding-block:38px 6px}
+.crumbs{color:var(--muted);font-size:.85rem;margin-bottom:14px}
+.crumbs a{color:var(--muted)}
+.head-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.classno{
+  flex:none;
+  display:grid;place-items:center;
+  width:64px;height:64px;
+  border:3px solid var(--ink);
+  border-radius:18px;
+  font-weight:800;font-size:1.7rem;
+  background:#fff;
+}
+h1{font-size:1.9rem;line-height:1.4;margin:.2em 0;font-weight:800}
+h1 small{display:block;font-weight:500;color:var(--muted);font-size:.6em}
+.unit-tag{
+  display:inline-block;
+  font-family:'IBM Plex Sans','Segoe UI',sans-serif;
+  direction:ltr;
+  font-size:.72rem;letter-spacing:.12em;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  border-radius:999px;
+  padding:.2em .9em;
+  font-weight:600;
+  margin-bottom:10px;
+}
+.lede{color:var(--muted);font-size:1.06rem;max-width:52em}
+
+/* lesson map chips */
+.map{display:flex;flex-wrap:wrap;gap:8px;margin-block:20px}
+.map a{
+  font-size:.85rem;font-weight:600;
+  color:var(--ink);
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:.3em 1em;
+}
+.map a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.map .lbl{font-size:.85rem;color:var(--muted);align-self:center}
+
+/* ---------- headings ---------- */
+h2{
+  font-size:1.45rem;font-weight:800;
+  margin:2.4em 0 .6em;
+  padding-inline-start:.55em;
+  border-inline-start:6px solid var(--accent);
+  line-height:1.5;
+}
+h3{font-size:1.12rem;font-weight:700;margin:1.6em 0 .4em}
+h4{font-size:1rem;font-weight:700;margin:1.2em 0 .3em}
+
+/* ---------- objective sections ---------- */
+.obj{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px 26px;
+  margin-block:22px;
+  box-shadow:0 1px 2px rgba(30,40,45,.03);
+}
+.obj-head{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.obj-badge{
+  flex:none;
+  display:grid;place-items:center;
+  width:46px;height:46px;
+  border-radius:13px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:800;font-size:1.15rem;
+}
+.obj-title{font-size:1.2rem;font-weight:800;line-height:1.6}
+.obj-sub{color:var(--muted);font-size:.95rem}
+
+/* ---------- special boxes ---------- */
+.child-box,.tip-box,.apply-box,.notice{
+  border-radius:12px;
+  padding:16px 20px;
+  margin-block:16px;
+}
+.box-title{font-weight:800;margin:0 0 .35em;display:flex;gap:.5em;align-items:center;font-size:1.02rem}
+.child-box{border:2px dashed #cbb45e;background:#fdfaf0}
+.tip-box{border:2px dashed #7ba6b0;background:var(--soft)}
+.apply-box{border:1px solid var(--line);background:#fff}
+.notice{border:1px solid #d9b1ac;background:var(--bad-soft);border-inline-start:5px solid var(--bad)}
+.notice .box-title{color:var(--bad)}
+.child-box ul,.tip-box ul,.apply-box ul{margin:.3em 0;padding-inline-start:1.5em}
+
+/* reveal answers */
+details.reveal{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  margin-block:8px;
+  overflow:hidden;
+}
+details.reveal summary{
+  cursor:pointer;
+  padding:.65em 1em;
+  font-weight:600;
+  list-style:none;
+  position:relative;
+}
+details.reveal summary::after{content:"▾";position:absolute;inset-inline-end:1em;color:var(--muted)}
+details.reveal[open] summary::after{content:"▴"}
+details.reveal summary:hover{background:var(--soft)}
+details.reveal .reveal-body{padding:.2em 1.1em .9em;border-top:1px dashed var(--line)}
+details.reveal .reveal-body p{margin-top:.5em}
+
+/* ---------- tables ---------- */
+.glossary{width:100%;border-collapse:collapse;background:#fff;font-size:.95rem;margin-block:12px;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.glossary th{
+  background:var(--soft);
+  color:var(--accent-deep);
+  font-weight:700;
+  text-align:start;
+  padding:.55em .9em;
+  border-bottom:2px solid var(--line);
+  font-size:.85rem;
+}
+.glossary td{padding:.5em .9em;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.glossary tr:last-child td{border-bottom:none}
+.glossary tr:nth-child(even) td{background:#fdfdfb}
+
+/* generic table */
+table.tbl{border-collapse:collapse;margin-block:10px;background:#fff}
+.tbl th,.tbl td{border:1px solid var(--line);padding:.45em .8em;font-size:.92rem}
+.tbl th{background:var(--soft)}
+
+/* ---------- lesson prev/next ---------- */
+.lesson-nav{
+  display:flex;justify-content:space-between;gap:12px;
+  margin-top:46px;
+  border-top:1px solid var(--line);
+  padding-top:18px;
+  flex-wrap:wrap;
+}
+.lesson-nav a{
+  background:#fff;border:1px solid var(--line);border-radius:10px;
+  padding:.5em 1.1em;font-weight:600;font-size:.95rem;color:var(--ink);
+}
+.lesson-nav a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;
+  font:inherit;font-weight:700;
+  border:1.5px solid var(--accent);
+  background:#fff;color:var(--accent);
+  border-radius:10px;
+  padding:.45em 1.4em;
+  cursor:pointer;
+  transition:transform .06s ease;
+}
+.btn:hover{text-decoration:none;background:var(--soft)}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep);color:#fff}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-ghost{border-color:var(--line);color:var(--muted)}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* ============================================================
+   QUIZ ENGINE (assets/quiz.js renders these)
+   ============================================================ */
+.quiz-shell{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px;margin-block:20px;box-shadow:0 1px 2px rgba(30,40,45,.04)}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.quiz-meta{font-size:.9rem;color:var(--muted);font-weight:600}
+.qprog{height:9px;background:var(--line-soft);border-radius:99px;overflow:hidden;margin-bottom:20px}
+.qprog>i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .35s ease}
+
+.qcard{border-top:1px dashed var(--line);padding-top:16px}
+.qtext{font-size:1.12rem;font-weight:700;line-height:2;margin:.2em 0 1em}
+.qdiff{
+  display:inline-block;
+  font-size:.75rem;font-weight:700;
+  border:1.5px solid;border-radius:999px;
+  padding:.05em .8em;margin-bottom:.6em;
+}
+.qdiff.d1{color:var(--ok);border-color:var(--ok)}
+.qdiff.d2{color:var(--warn);border-color:var(--warn)}
+.qdiff.d3{color:var(--bad);border-color:var(--bad)}
+
+.qopt{
+  display:flex;align-items:center;gap:.7em;
+  width:100%;text-align:start;
+  font:inherit;line-height:1.8;
+  background:#fff;
+  border:1.5px solid var(--line);
+  border-radius:11px;
+  padding:.55em 1em;
+  margin-block:7px;
+  cursor:pointer;
+}
+.qopt:hover:not(:disabled){border-color:var(--accent);background:var(--soft)}
+.qopt:disabled{cursor:default}
+.qopt .k{
+  flex:none;
+  font-family:'IBM Plex Sans',sans-serif;
+  display:grid;place-items:center;
+  min-width:1.9em;height:1.9em;
+  border:1px solid var(--line);
+  border-radius:8px;
+  font-size:.85rem;font-weight:600;color:var(--muted);
+  background:#fafaf8;
+}
+.qopt.correct{border-color:var(--ok);background:var(--ok-soft)}
+.qopt.correct .k{border-color:var(--ok);color:var(--ok);background:#fff}
+.qopt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.qopt.wrong .k{border-color:var(--bad);color:var(--bad);background:#fff}
+.qopt.dim{opacity:.55}
+
+.qfb{border-radius:11px;padding:.85em 1.1em;margin-top:14px;border:1px solid;line-height:1.9}
+.qfb.ok{border-color:#bfe0c9;background:var(--ok-soft)}
+.qfb.bad{border-color:#e5c0bc;background:var(--bad-soft)}
+.qfb b{display:block;margin-bottom:.15em}
+.qfoot{display:flex;justify-content:flex-end;gap:10px;margin-top:16px}
+
+.end-card{text-align:center;padding-block:18px}
+.grade{font-size:3rem;font-weight:800;line-height:1.2}
+.grade.g-high{color:var(--ok)}
+.grade.g-mid{color:var(--warn)}
+.grade.g-low{color:var(--bad)}
+.score-line{color:var(--muted);font-size:1.02rem;margin-block:.4em}
+.review-item{
+  border:1px solid var(--line);border-radius:11px;
+  padding:.8em 1em;margin-block:9px;
+  text-align:start;background:#fff;font-size:.95rem;
+}
+.review-item .rq{font-weight:700;margin-bottom:.25em;line-height:1.9}
+.review-item .ra{color:var(--ok);font-weight:600}
+.review-item .ry{color:var(--bad);font-weight:600}
+.review-item .rx{color:var(--muted);border-top:1px dashed var(--line);padding-top:.3em;margin-top:.3em;line-height:1.9}
+
+/* ============================================================
+   HOMEPAGE / HUB
+   ============================================================ */
+.hero{padding-block:52px 26px;text-align:center}
+.hero h1{font-size:2.4rem;margin-bottom:.2em}
+.hero .lede{margin-inline:auto;text-align:center}
+.hero .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.chip{
+  font-size:.85rem;font-weight:600;
+  background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:.3em 1em;color:var(--muted);
+}
+
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-block:18px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;position:relative;
+  display:flex;flex-direction:column;gap:.4em;
+  transition:border-color .15s ease;
+}
+.card:hover{border-color:var(--accent)}
+.card .card-num{
+  position:absolute;top:14px;inset-inline-end:16px;
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:1.6rem;font-weight:800;color:var(--line);
+}
+.card h3{margin:0;font-size:1.08rem}
+.card p{color:var(--muted);font-size:.92rem;margin:0;flex:1}
+.card .card-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:.7em}
+.mini{
+  font-size:.82rem;font-weight:700;
+  border-radius:8px;padding:.25em .9em;
+}
+.mini.dark{background:var(--accent);color:#fff}
+.mini.light{border:1.5px solid var(--line);color:var(--ink)}
+.mini.light:hover{border-color:var(--accent);color:var(--accent)}
+
+.unit-band{
+  border:1.5px solid var(--ink);border-radius:var(--radius);
+  padding:10px 20px;margin-top:38px;background:#fff;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.unit-band h2{margin:0;border:none;padding:0;font-size:1.15rem}
+.unit-band .note{color:var(--muted);font-size:.9rem}
+
+.game-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;display:flex;flex-direction:column;gap:.4em;
+}
+.game-card .gicon{font-size:2rem;line-height:1}
+.game-card h3{margin:.1em 0 0}
+.game-card p{color:var(--muted);font-size:.92rem;margin:0;flex:1}
+.game-card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:.5em}
+.tag{font-size:.75rem;font-weight:700;border-radius:999px;padding:.1em .75em;border:1px solid var(--line);color:var(--muted)}
+.tag.t3d{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:64px;
+  border-top:1px solid var(--line);
+  padding-block:26px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.88rem;
+}
+footer .en{font-size:.8em}
+
+/* ---------- responsive ---------- */
+@media (max-width:680px){
+  body{font-size:16px}
+  .wrap{padding-inline:16px}
+  h1{font-size:1.55rem}
+  .hero h1{font-size:1.8rem}
+  .obj{padding:18px 16px}
+  .quiz-shell{padding:18px 14px}
+  .classno{width:52px;height:52px;font-size:1.35rem;border-radius:14px}
+}
+
+/* ---------- SVG figures ---------- */
+figure.fig{margin:1.6em 0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px 8px}
+figure.fig svg{display:block;width:100%;height:auto;margin:0 auto}
+figure.fig figcaption{font-size:.9rem;color:var(--muted);text-align:center;padding:.5em .2em .2em;line-height:1.6}
+figure.fig figcaption b{color:var(--ink)}
+figure.fig .ftxt{font:600 12px/1.2 'IBM Plex Sans Arabic','Segoe UI',sans-serif}
+
+@media print{
+  .topnav,.lesson-nav,.map,.btn{display:none!important}
+  body{background:#fff}
+  .obj{break-inside:avoid;border:1px solid #ccc}
+}
